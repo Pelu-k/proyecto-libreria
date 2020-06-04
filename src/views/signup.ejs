@@ -1,0 +1,33 @@
+<%- include('layouts/header') %>
+
+<% if (signUpMessage.length > 0) { %>
+    <div class="alert alert-danger">
+        <p class="text-center"><%= signUpMessage %></p> 
+    </div>
+<% } %>
+
+<div class="container">
+    <form action="signup" method="post">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="text-center">Ingresar datos</h3>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Correo" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Contraseña" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="direction" placeholder="Dirección" class="form-control">
+                </div>
+                <div>
+                    <input type="radio" name="userType" value="false"> Lector<br>
+                    <input type="radio" name="userType" value="true"> Admin<br>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<%- include('layouts/header') %>

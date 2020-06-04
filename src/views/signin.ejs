@@ -1,0 +1,27 @@
+<%- include('layouts/header') %>
+
+<% if (signInMessage.length > 0) { %>
+    <div class="alert alert-danger">
+        <p class="text-center"><%= signInMessage %></p>
+    </div>
+<% } %>
+
+<div class="container">
+    <form action="signin" method="post">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="text-center">Inicio de sesión</h3>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Correo" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Contraseña" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+                <a href="/signin" class="btn btn-danger btn-block">Registrarse</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<%- include('layouts/header') %>
