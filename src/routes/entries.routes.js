@@ -36,6 +36,7 @@ router.get('/logout', isAuthenticated, (req, res, next) => {
 });
 
 router.get('/home', isAuthenticated, entries.renderHome);
+router.get('/profile', isAuthenticated, entries.renderProfile);
 
 // Extra
 
