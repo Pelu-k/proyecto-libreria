@@ -5,9 +5,12 @@
 <div class="container">
     <div class="card mt-2">
         <div class="card-body">
-            <h1><%= user.email %></h1>
-            <h2><%= user._id %></h2>
-            <p><%= user.direction %></p>
+            <h1 class="text-center">Profile</h1>
+            <hr>
+            <p>Correo : <%= user.email %></p>
+            <p>Id : <%= user._id %></p>
+            <p>Dirección : <%= user.direction %></p>
+            <p>Fecha de registro : <%= user.registrationDate %>  </p>
         </div>
     </div>
 </div>

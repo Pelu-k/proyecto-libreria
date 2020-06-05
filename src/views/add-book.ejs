@@ -1,0 +1,28 @@
+<%- include('layouts/header') %>
+
+<%- include('navbar') %>
+
+<div class="container">
+    <div class="card mt-2">
+        <div class="card-body">
+            <h1 class="text-center">Subir Libro</h1>
+            <hr>
+            <form action="/add-book" method="post">
+                <div class="form-group">
+                    <input type="text" name="title" class="form-control" placeholder="Titulo del libro" autofocus>
+                </div>
+                <div class="form-group">
+                    <textarea name="description" rows="6" class="form-control" placeholder="Descripción del libro"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">Seleccionar archivo</label>
+                    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                </div>
+                <hr>
+                <button type="submit" class="btn btn-success btn-block">Publicar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('layouts/footer') %>

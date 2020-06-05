@@ -15,9 +15,14 @@ const renderProfile = (req, res, next) => {
     res.render('profile');
 };
 
+const renderAddBook = (req, res, next) => {
+    res.render('add-book');
+};
+
 module.exports = {
     renderSignup,
     renderSignin,
     renderHome,
     renderProfile,
+    renderAddBook,
 }
