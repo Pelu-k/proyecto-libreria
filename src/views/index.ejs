@@ -2,9 +2,24 @@
 
 <%- include('navbar') %>
 
-<div>
-    <h1 class="text-center mt-3">Home</h1>
-    <hr>
+<div class="container">
+    <div class="card mt-2">
+        <div class="card-body">
+            <h1 class="text-center mt-3">Inicio</h1>
+            <hr>
+            <% for( let index = 0; index < 1; index++ ) { %>
+                <div class="row">
+                    <% for( let index = 0; index < 4; index++ ) { %>
+                        <div class="col">
+                            <div class="card" style="max-width: 240px; max-height: 320;">
+                                <a href=""><img src="../public/img/<%= index+1 %>.jpg " alt="..." title="Titulo"></a>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+            <% } %>
+        </div>
+    </div>
 </div>
 
 <%- include('layouts/footer') %>

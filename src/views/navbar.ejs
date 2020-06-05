@@ -7,27 +7,27 @@
         <ul class="navbar-nav ml-auto">
             <% if (user) { %>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/home">Home</a>
+                    <a class="nav-link" href="/home">Inicio</a>
                 </li>
                 <li class="nav-item active dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <%= user.email %> 
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/profile">Profile</a>
+                        <a class="dropdown-item" href="/profile">Perfil</a>
                         <% if (user.userType) { %>
-                            <a class="dropdown-item" href="/add-book">Subir Libro</a>
+                            <a class="dropdown-item" href="/add-book">Subir libro</a>
                         <% } %>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/logout">Exit</a>
+                        <a class="dropdown-item" href="/logout">Salir</a>
                     </div>
                 </li>
             <% } else { %>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/signin">Sign In</a>
+                    <a class="nav-link" href="/signin">Iniciar sesión</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/signup">Sign Up</a>
+                    <a class="nav-link" href="/signup">Registrarse</a>
                 </li>
             <% } %>
         </ul>
