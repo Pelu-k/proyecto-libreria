@@ -1,5 +1,7 @@
 <%- include('layouts/header') %>
 
+<%- include('navbar') %> 
+
 <% if (signUpMessage.length > 0) { %>
     <div class="alert alert-danger">
         <p class="text-center"><%= signUpMessage %></p> 
@@ -21,10 +23,9 @@
                 <div class="form-group">
                     <input type="text" name="direction" placeholder="Dirección" class="form-control">
                 </div>
-                <div>
-                    <input type="radio" name="userType" value="false"> Lector<br>
-                    <input type="radio" name="userType" value="true"> Admin<br>
-                </div>
+                <input type="radio" name="userType" value="false"> Lector<br>
+                <input type="radio" name="userType" value="true"> Admin<br>
+                <hr>
                 <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
             </div>
         </div>

@@ -1,5 +1,7 @@
 <%- include('layouts/header') %>
 
+<%- include('navbar') %> 
+
 <% if (signInMessage.length > 0) { %>
     <div class="alert alert-danger">
         <p class="text-center"><%= signInMessage %></p>
@@ -18,6 +20,7 @@
                 <div class="form-group">
                     <input type="password" name="password" placeholder="Contraseña" class="form-control">
                 </div>
+                <hr>
                 <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
                 <a href="/signup" class="btn btn-danger btn-block">Registrarse</a>
             </div>
