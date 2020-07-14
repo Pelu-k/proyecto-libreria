@@ -4,7 +4,7 @@ const BookSchema = new Schema({
     title: String,
     description: String,
     urlPdf: String,
-    irlImg: String
+    urlCover: String
 });
 
 module.exports = model('Book', BookSchema);

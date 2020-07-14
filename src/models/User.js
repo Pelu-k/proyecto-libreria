@@ -6,7 +6,8 @@ const UserSchema = new Schema({
     password: String,
     userType: {type: Boolean, default: false},
     registrationDate: Date,
-    direction: String
+    direction: String,
+    stripeCustomerId: String,
 });
 
 UserSchema.methods.encryptPassword = (password) => {

@@ -2,6 +2,8 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
 const User = require('../models/User');
+const { stripeConfig } = require('../config');
+const stripe = require('stripe')(stripeConfig.sKey);
 
 passport.serializeUser((user, done) => {
     done(null, user.id);
@@ -21,18 +23,24 @@ passport.use('local-signup', new LocalStrategy({
     if (user) {
         return done(null, false, req.flash('signupMessage', 'El email ya esta en uso'));
     } else {
+        const customer = await stripe.customers.create({
+            email: req.body.stripeEmail,
+            source: req.body.stripeToken,
+        });
+        const charge = await stripe.charges.create({
+            amount: 500,
+            currency: 'usd',
+            customer: customer.id,
+            description: 'Suscripción a Libreria Online',
+        });
         const newUser = new User();
         newUser.email = email;
         newUser.password = newUser.encryptPassword(password);
         newUser.direction = req.body.direction;
         newUser.registrationDate = Date.now();
-        if (req.body.userType === 'false') {
-            newUser.userType = false;
-        } else {
-            newUser.userType = true;
-        }
+        newUser.stripeCustomerId = customer.id;
         await newUser.save();
-        done(null, newUser);
+        done(null, newUser, req.flash('successMessage', 'Bienvenido a nuestra Libreria Online'));
     }
 }));
 

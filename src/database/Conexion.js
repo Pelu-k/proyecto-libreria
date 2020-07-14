@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { dbConfig } = require('../config');
 
-const uri = `mongodb+srv://${dbConfig.user}:${dbConfig.pass}@libreriaonlinedb-v5odo.mongodb.net/test?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${dbConfig.user}:${dbConfig.pass}@libreriaonlinedb-v5odo.mongodb.net/${dbConfig.name}?retryWrites=true&w=majority`;
 
 mongoose.connect(uri,{
     useNewUrlParser: true,

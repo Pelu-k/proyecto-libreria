@@ -21,13 +21,25 @@
                 <div class="form-group">
                     <input type="text" name="direction" placeholder="Dirección" class="form-control">
                 </div>
-                <input type="radio" name="userType" value="false"> Lector<br>
-                <input type="radio" name="userType" value="true"> Admin<br>
                 <hr>
+                <script src="https://checkout.stripe.com/checkout.js" 
+                        class="stripe-button"
+                        data-key="pk_test_51GxCyxAi7g0oxNkegPzPZum6fclej1LOFW0W0I9xPJFMHgoPB8vizoemieEpPnOcCmypg2gdAYNOB670uE6yD72k00YwVHjtIE"
+                        data-amount="500"
+                        data-name="Libreria Online"
+                        data-description="Suscripción a Libreria Online"
+                        data-img="./Logo.jpeg"
+                        data-locale="auto">
+                </script>
+                <script>
+                  document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+                </script>
                 <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
             </div>
         </div>
     </form>
 </div>
+
+
 
 <%- include('layouts/footer') %>
